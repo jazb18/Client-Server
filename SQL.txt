@@ -1,0 +1,6 @@
+SELECT * FROM 
+(select idlinea, count(idlinea) as contador
+  from productos
+  group by idlinea 
+  order by count(idlinea) desc) TT
+ WHERE rownum < 5
